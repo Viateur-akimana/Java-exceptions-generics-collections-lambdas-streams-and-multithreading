@@ -32,7 +32,6 @@ public class ReverseString {
     private static String reverseSentence(String sentence) {
         sentence = sentence.trim();
 
-        // Reverse the words within the sentence
         StringBuilder reversedWords = new StringBuilder();
         String[] words = sentence.split("\\s+");
         for (int i = words.length - 1; i >= 0; i--) {
