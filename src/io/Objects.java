@@ -8,7 +8,7 @@ public class Objects {
             FileReader inputStream = null;
             FileWriter outputStream = null;
             try {
-                inputStream = new FileReader("input.txt");
+                inputStream = new FileReader("/home/akimana/IdeaProjects/Advanced concepts/src/com/codewithviateur/io/districts.txt");
                 outputStream = new FileWriter("cput.txt");
                 int c;
                 while ((c = inputStream.read()) != -1) {
