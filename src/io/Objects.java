@@ -1,29 +1,41 @@
-package io;
-import java.io.FileReader;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-public class Objects {
+import java.util.Scanner;
 
-        public static void main(String[] args) throws IOException {
-            FileReader inputStream = null;
-            FileWriter outputStream = null;
-            try {
-                inputStream = new FileReader("/home/akimana/IdeaProjects/Advanced concepts/src/io/districts.txt");
-                outputStream = new FileWriter("cput.txt");
-                int c;
-                while ((c = inputStream.read()) != -1) {
-                    outputStream.write(c);
+public class Objects {
+    public static void main(String[] args) throws IOException {
+        Scanner s= null;
+        FileWriter outputStream = null;
+        try {
+            s= new Scanner(new File("/home/akimana/IdeaProjects/Advanced concepts/src/io/districts.txt")).useDelimiter(",|\\n");
+            outputStream = new FileWriter("output.txt");
+
+            while (s.hasNext()) {
+                String districtCode = s.next().trim();
+                String districtName = s.next().trim();
+                String provinceCode = s.next().trim();
+                String provinceName = s.next().trim();
+
+                outputStream.write("District Code: " + districtCode + "\n");
+                outputStream.write("District Name: " + districtName + "\n");
+                outputStream.write("Province Code: " + provinceCode + "\n");
+                outputStream.write("Province Name: " + provinceName + "\n\n");
+                if (s.hasNextLine()) {
+                    s.nextLine();
                 }
-            } finally {
-                if (inputStream != null) {
-                    inputStream.close();
-                }
-                if (outputStream != null) {
-                    outputStream.close();
-                }
+            }
+
+            System.out.println("Data written to output.txt successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (s != null) {
+                s.close();
+            }
+            if (outputStream != null) {
+                outputStream.close();
             }
         }
     }
-
-
-
+}
