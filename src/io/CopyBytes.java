@@ -7,7 +7,7 @@ public class CopyBytes {
         FileInputStream in = null;
         FileOutputStream out = null;
         try {
-            in = new FileInputStream("/home/akimana/IdeaProjects/Advanced concepts/src/com/codewithviateur/io/input.txt");
+            in = new FileInputStream("/home/akimana/IdeaProjects/Advanced concepts/src/io/input.txt");
             out = new FileOutputStream("output.txt");
             int c;
             while ((c = in.read()) != -1) {
