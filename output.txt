@@ -1,5 +1,5 @@
 District Code: 0101
-District Name: Nyarugenge
+District Name:  Nyarugenge
 Province Code: 01
 Province Name: Kigali City
 

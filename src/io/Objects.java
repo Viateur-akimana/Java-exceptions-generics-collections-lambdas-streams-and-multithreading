@@ -12,10 +12,10 @@ public class Objects {
             outputStream = new FileWriter("output.txt");
 
             while (s.hasNext()) {
-                String districtCode = s.next().trim();
-                String districtName = s.next().trim();
-                String provinceCode = s.next().trim();
-                String provinceName = s.next().trim();
+                String districtCode = s.next();
+                String districtName = s.next();
+                String provinceCode = s.next();
+                String provinceName = s.next();
 
                 outputStream.write("District Code: " + districtCode + "\n");
                 outputStream.write("District Name: " + districtName + "\n");
